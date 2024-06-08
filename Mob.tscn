@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkwkdv0fdqfw5"]
+[gd_scene load_steps=10 format=3 uid="uid://bkwkdv0fdqfw5"]
 
 [ext_resource type="Script" path="res://Mob.gd" id="1_jc3yy"]
 [ext_resource type="Texture2D" uid="uid://c8m30d2krugwa" path="res://art/enemyFlyingAlt_1.png" id="2_ios54"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cyky360ky2o17" path="res://art/enemySwimming_2.png" id="5_4whjb"]
 [ext_resource type="Texture2D" uid="uid://2jq8cfxumdo6" path="res://art/enemyWalking_1.png" id="6_0dqfe"]
 [ext_resource type="Texture2D" uid="uid://das86d2llaa0d" path="res://art/enemyWalking_2.png" id="7_1dnd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jn8jd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0pn2u"]
 animations = [{
@@ -50,12 +52,13 @@ gravity_scale = 0.0
 script = ExtResource("1_jc3yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_jn8jd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_0pn2u")
 animation = &"walk"
-frame = 1
-frame_progress = 0.838945
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
